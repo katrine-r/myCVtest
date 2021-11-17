@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background: #fff;
+}
+
+li {
+    color: #595959;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+    background: #fff;
+    position: relative;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background: #1e2939;
+    width: 400px;
+    padding: 50px 20px 50px 20px;
+}
+
+.myPhoto {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.myPhoto img {
+    height: auto;
+    min-width: 160px;
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: .5s;
+    user-select: none;
+    filter: grayscale(100%);
+}
+
+.myPhoto img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modalContent {
+    display: block;
+    margin: auto;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+    height: 150px;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+}
+
+.modalContent, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0);}
+    to {-webkit-transform: scale(1);}
+}
+
+@keyframes zoom {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+.close {
+    position: absolute;
+    top: 45px;
+    right: 45px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+    .modalContent {
+        width: 100%;
+    }
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.mainContainer h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700px;
+    line-height: 1.2em;
+    color: #fff;
+}
+
+.contactsContainer {
+    max-width: 355px;
+    margin-bottom: 20px; 
+    padding: 20px 30px;
+}
+
+.iconsContacts {
+    display: flex;
+    margin-bottom: 5px;
+    min-width: 160px;
+    max-width: 300px;
+}
+
+.iconsContacts img {
+    margin-right: 10px;
+    color: #fff;
+    transition: .5s;
+    user-select: none;
+}
+
+.iconSVG:hover {
+    filter: invert(68%) sepia(16%) saturate(0%) hue-rotate(219deg) brightness(95%) contrast(112%);
+}
+
+.iconsContacts a {
+    text-decoration: none;
+    line-height: 1.8em;
+}
+
+a {
+    color: #595959;
+}
+
+a:hover {
+    color: #b1b1b1;
+}
+
+.techSkillContainer {
+    max-width: 355px;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+}
+
+.techSkillContainer ul li {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7em;
+    color: #ff7011;
+}
+
+.techSkillContainer ul li span {
+    color: #595959;
+}
+
+.content {
+    width: 100%;
+    min-width: 400px;
+    padding: 100px 90px 100px 90px;
+}
+
+.info h2 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6em;
+    margin-bottom: 25px;
+}
+
+.info h1 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 2em;
+    margin-bottom: 25px;
+}
+
+.info p {
+    line-height: 1.6em;
+    margin-bottom: 25px;
+}
+
+.alignSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.sectionHeaders {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6em;
+    margin-bottom: 25px;
+}
+
+.projects {
+    margin-bottom: 25px;
+}
+
+.accordWrapper {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.accordItem {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #000;
+}
+
+.accordItemTitle {
+    padding: 2px 10px;
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    position: relative;
+}
+
+.accordItemTitle::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    font-size: 24px;
+    color: #ff7011;
+}
+
+.accordItemContent {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.accordItem.active .accordItemContent {
+    height: 100%;
+}
+
+.accordItem.active .accordItemTitle::before {
+    content: "-";
+}
+
+.professionTitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.professionCompany {
+    color: #ff7011;
+}
+
+.professionTime {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #a8a8a8;
+}
+
+.linksCompany,
+.professionDuties {
+    margin-top: 15px;
+}
+
+.professionDuties {
+    margin-bottom: 25px;
+}
+
+.professionDuties li {
+    line-height: 1.6em;    
+}
+
+.professionEducation {
+    font-size: 14px;
+    line-height: 1.7em;
+    margin-bottom: 15px;
+}
+
+.buttonContainer {
+    padding: 0 0 30px 50px;
+    background: #1e2939;
+    width: 100%;
+}
+
+.buttonPrint {
+    position: absolute;
+    top: 950px;
+    left: 50px;
+    padding: 10px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    background: rgb(197, 197, 197);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buttonPrint:hover {
+    color: #fff;
+    background: rgb(26, 26, 26);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media print {
+    body *{
+        visibility: hidden;
+    }
+    .wrapper *{
+        visibility: visible;
+    }
+}
+
+/**/
+
+@media screen and (max-width: 1440px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .info h2 {
+        line-height: 1.3em;
+        margin-bottom: 25px;
+    }
+    
+    .info h1 {
+        font-size: 35px;
+        line-height: 1.7em;
+        margin-bottom: 25px;
+    }
+
+    .professionTitle {
+        font-size: 14px;
+    } 
+
+    .alignSpaceBetween {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .alignSpaceBetween a {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 300px;
+        padding: 50px 20px 50px 20px;
+    }
+
+    .mainContainer h3 {
+        font-size: 18px;
+    }
+
+    .contactsContainer {
+        padding: 20px 10px;
+    }
+
+    .techSkillContainer {
+        padding: 20px 10px;
+    }
+
+    .content {
+        padding: 100px 45px 100px 45px;
+    }
+
+    .sectionHeaders {
+        font-size: 18px;
+    }
+
+    .buttonPrint {
+        position: absolute;
+        top: 850px;
+        left: 30px;
+    }
+
+    .professionCompany {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        
+    }
+
+    .contactsContainer {
+        width: 355px;
+        padding: 20px 55px;
+    }
+
+    .techSkillContainer {
+        width: 355px;
+        padding: 20px 55px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .wrapper {
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .sidebar {
+        width: 100%;
+        
+    }
+
+    .contactsContainer {
+        width: 305px;
+        padding: 20px 30px;
+    }
+
+    .techSkillContainer {
+        width: 305px;
+        padding: 20px 30px;
+    }
+
+    .content {
+        min-width: 345px;
+        padding: 100px 15px 100px 15px;
+    }
+    
+    .buttonPrint {
+        position: absolute;
+        top: 880px;
+        left: 230px;
+    }
+}
